@@ -52,32 +52,30 @@ int main(void)
 
 
 ## C Program to create new process using Linux API system calls fork() and exit()
-```#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-int main() {
-    int pid;
-  pid = fork();
-    if (pid == -1) {
-        perror("fork");
-        exit(EXIT_FAILURE);
-    }
-    else if (pid == 0) {
-        printf("I am child, my pid is %d\n", getpid());
-        printf("My parent pid is: %d\n", getppid());
-        exit(EXIT_SUCCESS);
-    }
-    else {
-        printf("I am parent, my pid is %d\n", getpid());
-        sleep(100);
-        exit(EXIT_SUCCESS);
-    }
-    return 0;
+```
+#include <stdio.h>
+#include<stdlib.h>
+int main()
+{ 
+int pid; 
+pid=fork(); 
+if(pid == 0) 
+{ 
+printf("Iam child my pid is %d\n",getpid()); 
+printf("My parent pid is:%d\n",getppid()); 
+exit(0); 
+} 
+else{ 
+printf("I am parent, my pid is %d\n",getpid()); 
+sleep(100); 
+exit(0);
+} 
 }
 ```
 ##OUTPUT
 
-![image](https://github.com/Lathika2006/Linux-Process-API-fork-wait-exec/assets/148959215/f47a4f77-e9f0-40eb-8722-3df55eec10d8)
+![image](https://github.com/Lathika2006/Linux-Process-API-fork-wait-exec/assets/148959215/df497d37-d21e-4a13-a572-9ecc11628a12)
+
 
 
 ## C Program to execute Linux system commands using Linux API system calls exec() family
